@@ -1,0 +1,21 @@
+<div id="header">
+    <div class="logo">
+        <div class="row">
+            <div>
+                <a href="{% url 'main:main' %}">MyWeb</a>
+            </div>
+            <div>
+                {% if user.username %}
+                    <a href="{% url 'account:password_change' %}">{{user.last_name}} 님 </a>
+                    <a href="{% url 'account:logout' %}">로그아웃</a>
+                {% else %}
+                    <a href="{% url 'account:login' %}">로그인</a>
+                    <a href="{% url 'account:register' %}">회원가입</a>
+                {% endif %}
+            </div>
+        </div>
+    </div>
+    <div class="menu">
+        
+    </div>
+</div>

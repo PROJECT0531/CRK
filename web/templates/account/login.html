@@ -1,0 +1,36 @@
+{% extends 'base.html' %}
+
+{% block title %}Login{% endblock title %}
+
+{% block script %}
+{% load static %} <script src = "{% static 'js/login.js' %}"></script>
+{% endblock script %}
+
+{% block content %}
+{% if form.errors %}
+    <script>alert("ID와 비밀번호를 올바르게 입력해 주시기 바랍니다");</script>
+{% endif %}
+<div>
+<div>
+    <div>
+        <form id="login_form" action="." method="POST">
+            {% csrf_token %}
+            <div>ID: 
+                <input type="text" name="username" id="username">
+            </div>
+            <div>PASSWARD: 
+                <input type="password" name="password" id="password">
+            </div>
+            <div>
+                <input type="button" value="로그인" onclick="login()">
+                <input type="button" value="회원가입" onclick="location.herf='{% url 'account:register' %}'">
+            </div>
+        </form>
+    </div>
+    <div>
+        <h4>아이디가 없으신가요? 회원가입을 해 주시기 바랍니다.</h4>
+    </div>
+</div>
+</div>
+
+{% endblock content %}

@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+
+{% block title %}회원가입 완료{% endblock title %}
+
+{% block content %}
+<div>
+    <div>
+        <div>
+            <div>
+                <h3>회원가입이 완료되었습니다.</h3>
+                <h3>Quant서비스를 이용할 수 있습니다.</h3>
+            </div>
+        </div>
+        <div>
+            <div>
+                <input type="button" value="로그인" onClick="location.href={% url 'account:login' %}">
+                <input type="button" value="메인화면" onClick="location.href={% url 'board:main' %}">
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock content %}
